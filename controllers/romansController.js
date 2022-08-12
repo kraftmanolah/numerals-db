@@ -9,10 +9,7 @@ exports.getAllRomans = (req, res, next) => {
 };
 
 exports.saveRoman = (req, res,) => {
-  let newRoman = new Roman({
-    numeral: req.body.numeral,
-    value: req.body.value
-  });
+  let newRoman = new Roman(req.body);
 
   newRoman.save((error, result) => {
     if (error) res.send(error);
